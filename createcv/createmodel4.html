@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>填写信息</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+	body { padding-top: 50px; }
+	.mynar{background-color: #01A5B1;opacity:0.95;}
+	.fanhui{ color:#FFF; position:relative; top:10px; font-size:22px;}
+	.tianxie{color:#FFF; font-size:18px; position: relative;left:25%; top:9px; margin:8px;margin-left:20px;}
+	form{ padding-left:10%; padding-right:10%; margin-top:30px;}
+	#minzu{ width:50%}
+	#xingbie{ width:50%}
+	#xueli{ width:50%}
+	
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top mynar">
+ 	 <div class="container">
+ 	<a href="previewmodel4.html" class="fanhui"><span class="glyphicon glyphicon-menu-left"></span></a>
+    <a href="#" class="tianxie" onclick="quit()">舍弃</a>
+    <a id="preeditbtn" href="#" class="tianxie" onclick="preedit()">预览</a>
+    <a href="#" class="tianxie" onclick="save()">保存</a>
+<!--    <a href="#" class="tianxie" onclick="publish()">发布</a>-->
+  	</div>
+  </nav>
+  <form>
+  <div class="form-group">
+    <label for="xingming">姓名:</label>
+    <input type="text" class="form-control" id="xingming" placeholder=" ">
+      <div class="form-group">
+    <label for="xingbie">性别:</label>
+    <input type="text" class="form-control" id="xingbie" placeholder=" ">
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="minzu">民族:</label>
+    <input type="text" class="form-control" id="minzu" placeholder=" ">
+  </div>
+  <div class="form-group">
+    <label for="xueli">学历:</label>
+    <input type="text" class="form-control" id="xueli" placeholder=" ">
+  </div>
+
+  <div class="form-group">
+    <label for="zhuanye">专业:</label>
+    <input type="text" class="form-control" id="zhuanye" placeholder=" ">
+  </div>
+  
+  <div class="form-group">
+    <label for="dianhua">电话:</label>
+    <input type="text" class="form-control" id="dianhua" placeholder=" ">
+  </div>
+  <div class="form-group">
+    <label for="dianyou">电邮:</label>
+    <input type="text" class="form-control" id="dianyou" placeholder=" ">
+   </div>
+    <div class="form-group">
+    <label for="beijing">教育背景:</label>
+   <textarea class="form-control" rows="3" id="beijing"></textarea>
+    </div>
+    <div class="form-group">
+    <label for="jineng">职业技能:</label>
+    <textarea class="form-control" rows="3" id="jineng"></textarea>
+    </div>
+    <div class="form-group">
+    <label for="jingli">工作经历:</label>
+    <textarea class="form-control" rows="3" id="jingli"></textarea>
+ 	</div>
+        <div class="form-group">
+    <label for="yixiang">求职意向:</label>
+    <textarea class="form-control" rows="3" id="yixiang"></textarea>
+ 	</div>
+        <div class="form-group">
+    <label for="pingjia">自我评价:</label>
+    <textarea class="form-control" rows="3" id="pingjia"></textarea>
+ 	</div>
+  </form>
+  </body>

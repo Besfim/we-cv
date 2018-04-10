@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>个人中心</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+	body { padding-left: 68px; }
+	.jiantou{ position: relative; left:5px;}
+	.mynav{ height:100%; background-color: #01A5B1;width:68px; padding-left:13px;}
+	ul
+	{
+		list-style-type:none;
+		margin:0;
+		padding:0;
+	}
+	.daoh{font-size:15px; color:#FFF; margin-top:55px;}
+	.juser{font-size:30px; color:#FFF; position:absolute; top:87%;}
+	.suol{ height:100px;}
+	.shang{ margin-left:0; margin-right:0;}
+	.banq{ margin:73px auto; text-align:center;}
+	.yoh{ margin:30px;}
+	.yoh button{ margin-top:80px;}
+	
+
+	</style>
+    </head>
+    <body>
+    <nav class="mynav navbar-default navbar-fixed-top">
+    <ul>
+    	    	<li  class=" daoh"><a   class=" daoh" href="mycv.html"><img src="img/历史 icon.png" heigh="40" width="40"></a></li>	
+        <li  class=" daoh"><a href="cvmodel.html" class=" daoh"><img src="img/编辑 icon.png" heigh="40" width="40"></a></li>	
+        <li  class=" juser"><a href="#"  class=" daoh"><img src="img/个人信息 icon.png" heigh="40" width="40"><span class="glyphicon glyphicon-triangle-left jiantou"  aria-hidden="true"></span></a></li>	
+    </ul>
+    </nav>
+	<div class="banq">
+    <img src="img/铭牌.png" height="155" width="250">
+    </div>
+    <div class="yoh">
+    <p>你好！&nbsp;&nbsp;&nbsp;<span id="name"></span></p>
+    <p>我为主人制作了<span id="count"></span>份的优质简历</p>
+	<p>我和主人共度了<span id="days"></span>天的美好时光</p>
+    
+    <button type="button" class="btn btn-info" onClick="location='php/logout.php'">退出登录</button>
+
+    </div>
+    </body>
+    </html>
+<script type="text/javascript">
+var data=new Array();
+getmain();
+function getmain()
+	{var request = new XMLHttpRequest();
+		request.open("GET","php/getmain.php");
+		request.send();
+		request.onreadystatechange=function(){
+			if(request.readyState===4)
+				if(request.status===200)
+					{data=JSON.parse(request.responseText);
+					setinfo();}}
+	}
+function setinfo()
+	{document.getElementById("name").innerHTML=data[0];
+	document.getElementById("count").innerHTML=data[1];
+	document.getElementById("days").innerHTML=data[2];
+	}
+</script>   

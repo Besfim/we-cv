@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>我的简历</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+	
+	body { padding-left: 68px; }
+	.jiantou{ position: relative; left:5px;}
+	
+	.mynav{ height:100%; background-color: #01A5B1;width:68px; padding-left:13px;}
+	ul
+	{
+		list-style-type:none;
+		margin:0;
+		padding:0;
+	}
+	.daoh{font-size:15px; color:#FFF; margin-top:55px;}
+	.juser{font-size:30px; color:#FFF; position:absolute; top:87%;}
+	.suol{ width:137px; height:192px; overflow:hidden; margin:0 auto; padding:0;}
+	.smg{ padding: 15px 0 0 0 ;}
+	.smg p{ margin:15px auto 7px;}
+	</style>
+    </head>
+    <body>
+    <nav class="mynav navbar-default navbar-fixed-top">
+    <ul>
+    	   <li  class=" daoh"><a   class=" daoh" href="#"><img src="img/历史 icon.png" heigh="40" width="40"><span class="glyphicon glyphicon-triangle-left jiantou"  aria-hidden="true"></span></a></li>	
+        <li  class=" daoh"><a href="cvmodel.html" class=" daoh"><img src="img/编辑 icon.png" heigh="40" width="40"></a></li>	
+        <li  class=" juser"><a href="main.html"  class=" daoh"><img src="img/个人信息 icon.png" heigh="40" width="40"></a></li>	
+    </ul>
+    </nav>
+	<div class="container">
+    <div class="row" id="cvbigbox">
+    	<div id="empty" style="width:60%;height:20%;margin:60px auto">
+        <span style="font-family:幼圆;font-size:18px;color:DarkGray;">简历列表为空，请到简历模板处创建简历</span>
+        </div>
+<!--        <div class="col-xs-6 col-sm-2 smg">
+   		 <div href="#" class="suol">
+   		   <img src="img/1.PNG" alt="">
+   		 </div>
+         <p align="center">我的简历1   <button class="btn btn-primary btn-xs">二维码</button></p>
+ 		</div>-->
+	</div>   
+    </div>
+    </body>
+    </html>
+<script type="text/javascript">
+var data=new Array();
+getmycv();
+function getmycv()
+	{var request = new XMLHttpRequest();
+		request.open("GET","php/getmycv.php");
+		request.send();
+		request.onreadystatechange=function(){
+			if(request.readyState===4)
+				if(request.status===200)
+					{data=JSON.parse(request.responseText);
+					addcv();}}
+	}
+function addcv()
+	{document.getElementById("cvbigbox").removeChild(document.getElementById("empty"));
+	for(var i=0;i<data.length;i++)
+		{var cvbigbox = document.getElementById("cvbigbox");
+		var cvbox = document.createElement("div");
+		var cva = document.createElement("a");
+		var cvhref = document.createElement("div");
+		var cvimg = document.createElement("img");
+		var cvname = document.createElement("p");
+		var qrcode = document.createElement("a");
+		cvbox.className="col-xs-6 smg";
+		cva.href="php/cvindex.php?id="+ data[i].id +"&type=" + data[i].type;
+		cvhref.className="suol";
+		cvimg.src="img/"+ data[i].type +".png";
+		cvimg.width="137";
+		cvimg.geight="192";
+		cvname.innerHTML=data[i].name +"&nbsp;&nbsp;";
+		cvname.align="center";
+		qrcode.className="btn btn-primary btn-xs";
+		qrcode.href="php/qrcord.php?id="+ data[i].id +"&type=" + data[i].type;
+		qrcode.innerHTML="二维码";
+		cvbigbox.appendChild(cvbox);
+		cvbox.appendChild(cvhref);
+		cvhref.appendChild(cva);
+		cvbox.appendChild(cvname);
+		cvname.appendChild(qrcode);
+		cva.appendChild(cvimg);
+		}
+	}
+</script>   

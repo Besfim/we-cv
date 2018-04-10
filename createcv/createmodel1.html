@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>填写信息</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+	body { padding-top: 50px; }
+	.mynar{background-color: #01A5B1;opacity:0.95;}
+	.fanhui{ color:#FFF; position:relative; top:10px; font-size:22px;}
+	.tianxie{color:#FFF; font-size:18px; position: relative;left:25%; top:9px; margin:8px;margin-left:20px;}
+	form{ padding-left:10%; padding-right:10%; margin-top:30px;}
+	#xingbie{ width:50%}
+	
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top mynar">
+ 	 <div class="container">
+ 	<a href="previewmodel1.html" class="fanhui"><span class="glyphicon glyphicon-menu-left"></span></a>
+    <a href="#" class="tianxie" onclick="quit()">舍弃</a>
+    <a id="preeditbtn" href="#" class="tianxie" onclick="preedit()">预览</a>
+    <a href="#" class="tianxie" onclick="save()">保存</a>
+<!--    <a href="#" class="tianxie" onclick="publish()">发布</a>-->
+  	</div>
+  </nav>
+  <form>
+  <div class="form-group">
+    <label for="xingming">姓名:</label>
+    <input type="text" class="form-control" id="xingming" placeholder=" ">
+  </div>
+
+  <div class="form-group">
+    <label for="xingbie">性别:</label>
+    <input type="text" class="form-control" id="xingbie" placeholder=" ">
+    <div class="form-group">
+    <label for="nianling">年龄:</label>
+    <input type="text" class="form-control" id="nianling" placeholder=" ">
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="zhuanye">专业:</label>
+    <input type="text" class="form-control" id="zhuanye" placeholder=" ">
+  </div>
+    <div class="form-group">
+    <label for="banji">班级:</label>
+    <input type="text" class="form-control" id="banji" placeholder=" ">
+  </div>
+    <div class="form-group">
+    <label for="bumen">意向部门:</label>
+    <input type="text" class="form-control" id="bumen" placeholder=" ">
+   </div>
+  
+  <div class="form-group">
+    <label for="techang">特长:</label>
+   <textarea class="form-control" rows="3" id="techang"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="xingquaihao">兴趣爱好:</label>
+   <textarea class="form-control" rows="3" id="xingquaihao"></textarea>
+  </div>
+
+    <div class="form-group">
+    <label for="kanfa">对于扁平化设计趋势的看法：</label>
+   <textarea class="form-control" rows="3" id="kanfa"></textarea>
+    </div>
+  
+  </form>
+  </body>
